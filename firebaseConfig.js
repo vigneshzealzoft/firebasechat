@@ -20,8 +20,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-
-export const db= getFirestore(app)
+const db= getFirestore(app)
 
 export const userRef =collection(db, "users");
 export const roomRef=collection(db, 'rooms');
+export const messagesRef = (roomId) => collection(db, 'rooms', roomId, 'messages');
+export {db}

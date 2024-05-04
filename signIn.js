@@ -16,6 +16,7 @@ const Sigin = ({navigation}) => {
     const signin = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+            // console.log(userCredential)
           navigation.navigate('Home',{uid:userCredential.user});
         })
         .catch((error) => {
